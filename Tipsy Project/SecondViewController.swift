@@ -72,7 +72,7 @@ class SecondViewController: UIViewController {
         view.addSubview(totalLabel)
         view.addSubview(commentLabel)
         view.addSubview(button)
- 
+        
         backgrView.snp.makeConstraints { make in
             make.horizontalEdges.top.equalToSuperview()
             make.bottom.equalToSuperview().multipliedBy(0.3)

@@ -175,7 +175,6 @@ class ViewController: UIViewController {
         stackViewValues.addArrangedSubview(valueTwoButton)
         stackViewValues.addArrangedSubview(valueThreeButton)
         
-        
         backgrView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview()
             make.bottom.equalToSuperview()
@@ -246,6 +245,6 @@ class ViewController: UIViewController {
         guard let text = Double(sender.text!) else { return }
         result["text"] = Double(text)
     }
-
+    
 }
 
