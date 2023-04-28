@@ -13,6 +13,11 @@ class ViewController: UIViewController {
     private var result = ["text" : 0.0, "persent" : 1.0]
     private var discount = String()
     
+    private lazy var tapGesture: UITapGestureRecognizer = {
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        return tapGesture
+    }()
+    
     private lazy var valueOneButton: UIButton = {
         let button = UIButton()
         button.setTitle("0 %", for: .normal)
@@ -146,17 +151,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
         setupViews()
-        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        view.addGestureRecognizer(tapGesture)
         
     }
     
     private func setupViews() {
+        view.backgroundColor = .white
         view.addSubview(backgrView)
         view.addSubview(stackViewUpper)
         view.addSubview(button)
+        view.addGestureRecognizer(tapGesture)
         
         backgrView.addSubview(stackViewLower)
         
